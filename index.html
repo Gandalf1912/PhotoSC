@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		PhotoSC
+	</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<div id="logo" onclick="slowScroll('#top')">
+			<span>PhotoSC</span>
+		</div>
+		<div id="about">
+			<a href="#" title="info" onclick="slowScroll('#main')">Info</a>
+			<a href="#" title="overview" onclick="slowScroll('#overview')">Курси</a>
+			<a href="#" title="contacts" onclick="slowScroll('#contacts')">Реєстрація</a>
+			<a href="#" title="faq" onclick="slowScroll('#faq')">FAQ</a>
+		</div>
+	</header>
+	<div id="top">
+		<h1>PhotoSC</h1>
+		<h3>Це наш курс по PhotoShop</h3>
+	</div>
+	<div id="main">
+		<div class="intro">
+			<h2>Що таке Adobe Photoshop:</h2>
+		</div>
+		<div class="text">
+			<span>Adobe Photoshop - найпопулярніший растровий графічний редактор. Цей продукт є лідером на ринку в області комерційних засобів редагування растрових зображень.
+			Більшість професійних художників, дизайнерів, фотографів та мультиплікаторів під час роботи з растровими зображеннями найчастіше використовують саме цей редактор.</span>
+		</div>
+	</div>
+
+	<div id="overview">
+		<h2>Наші Курси.</h2>
+		<h4>Їх є всього 2:</h4>
+
+		<div class="img">
+			<img src="http://tilimili-masiki.com.ua/wp-content/uploads/2017/07/%D0%94%D0%B8%D1%82%D0%B8%D0%BD%D0%B0-%D1%96-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8E%D1%82%D0%B5%D1%80-3.png" alt="">
+			<span>Курс для початківців</span>
+		</div>
+
+		<div class="img">
+			<img src="https://st3.depositphotos.com/1643295/i/600/depositphotos_182589642-stock-photo-caucasian-businessman-typing-computer-keyboard.jpg" alt="">
+			<span>Курс для спеців</span>
+		</div>
+
+	</div>
+
+	<div id="contacts">
+		<center>
+			<h5>Для реєстрації на курс введіть свої данні</h5>
+		</center>
+		<form id="form_input">
+			<label for="name">Ім'я <span>*</span></label><br>
+			<input type="text" placeholder="Введіть ім'я" name="name" id="name"><br>
+			<label for="email">Почта <span>*</span></label><br>
+			<input type="email" placeholder="Введіть email" name="email" id="email"><br>
+			<label for="massage">Вибраний курс <span>*</span></label><br>
+			<textarea placeholder="Введіть вибраний курс" name="maassage" id="massage"></textarea><br>
+			<div id="mess_send" class="btn">Відправити</div>
+		</form>
+	</div>
+
+	<div id="faq">
+		<div>
+			<span class="title">...</span><br>
+			<span class="heading">Скільки будуть тривати курси?</span>
+			<p>Курси для початківців будуть тривати: 3 місяці, а курси для спеців: 1 місяць. </p>
+		</div>
+
+		<div>
+			<span class="title">...</span><br>
+			<span class="heading">Що ми навчаємо на курсах для початківців?</span>
+			<p>На курсах для початківців, ми навчаємо основам Photoshop. На них ви зрозумієте, як створювати статичну та анімовану графіку, працювати з композицією, типографікою, ретушшю та шарами.
+			У результаті — практичні скіли та пара нових робіт у портфоліо: постер, key visual рекламної кампанії, продуктова упаковка та серія із трьох анімованих плакатів.</p>
+		</div>
+
+		<div>
+			<span class="title">...</span><br>
+			<span class="heading">Курси зараз оффлайн чи онлайн?</span>
+			<p>На даний момент наші курси проходять у дистанційній формі, тому всі заняття проводяться у Discord.</p>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		function slowScroll(id){
+			$('html, body').animate({
+				scrollTop: $(id).offset().top
+			}, 500) 
+		}
+
+		$(document).on("scroll", function(){
+			if($(window).scrollTop() === 0)
+				$("header").removeClass("fixed")
+			else
+				$("header").attr("class", "fixed")
+			})
+	</script>
+</body>
+</html>
